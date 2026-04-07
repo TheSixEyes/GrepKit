@@ -14,8 +14,8 @@ Option B — Kotlin CLI (if installed):
 
 ```cmd
 mkdir build 2>NUL
-kotlinc src\main\kotlin\Main.kt -include-runtime -d build\RegEx-TextSearch.jar
-java -jar build\RegEx-TextSearch.jar
+kotlinc src\main\kotlin\Main.kt -include-runtime -d build\GrepKit.jar
+java -jar build\GrepKit.jar
 ```
 
 ## Usage
@@ -34,23 +34,7 @@ NOTE NUM_ _DIV_ NUM_SECT _ID_  UNIT___TITLE____ _CR_EQUIV ___NAME_____ NUM _ROOM
                                                           Jones D      001 1116  MTWTh      10:30A 11:30A    24     15     9  5.0 
 ```
 
-Extra credit: If a class has three or more associated lines, the program prints all of them. For example, `PE 139` returns all continuation lines for each matching section.
-
-## Grading rubric coverage
-- Indenting and Header (5 pts):
-  - Prints a program header once and the two-column header lines above each result set. Original line indentation is preserved.
-- Asks for Department and Class Number (10 pts):
-  - Prompts for both; accepts `EXIT` to quit.
-- Finds and prints line with text found (25 pts):
-  - Uses regex to locate the main line containing both Department and Class Number.
-- Prints second line that is associated (45 pts):
-  - Prints all continuation lines directly following the main line; the immediate next line is always included when present.
-- Loops for more input and searching until "EXIT" is typed by user (15 pts):
-  - Continues prompting until `EXIT`.
-- 3 lines or more printed (10 pts):
-  - The two header lines plus at least the main line ensure >= 3 lines. Many classes also include multiple continuation lines.
-- Extra Credit (10 pts):
-  - Prints all lines associated with a class block (e.g., `PE 139`).
+If a class has three or more associated lines, the program prints all of them. For example, `PE 139` returns all continuation lines for each matching section.
 
 ## Notes
 - The program never modifies `Enrollment.txt`; it only reads it from the current working directory.
